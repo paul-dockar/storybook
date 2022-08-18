@@ -1,5 +1,6 @@
 const path = require('path');
 const express = require('express');
+const favicon = require('serve-favicon');
 const dotenv = require('dotenv');
 const morgan = require('morgan');
 const { engine } = require('express-handlebars');
@@ -76,6 +77,9 @@ app.use(function (req, res, next) {
 
 // Static folder
 app.use(express.static(path.join(__dirname, 'public')));
+
+// Favicon
+app.use(favicon(__dirname + '/public/images/favicon.ico'));
 
 // Routes
 app.use('/', require('./routes/index'));
