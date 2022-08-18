@@ -1,5 +1,4 @@
 const express = require('express');
-const { editIcon } = require('../helpers/hbs');
 const router = express.Router();
 const { ensureAuth } = require('../middleware/auth');
 
